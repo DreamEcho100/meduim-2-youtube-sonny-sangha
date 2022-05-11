@@ -1,3 +1,4 @@
+// import CustomEditor from './components/customEditor'
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -21,21 +22,22 @@ export default {
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
-        {title: 'H2', value: 'h2'},
-        {title: 'H3', value: 'h3'},
-        {title: 'H4', value: 'h4'},
-        {title: 'Quote', value: 'blockquote'},
+        { title: 'Normal', value: 'normal' },
+        { title: 'H1', value: 'h1' },
+        { title: 'H2', value: 'h2' },
+        { title: 'H3', value: 'h3' },
+        { title: 'H4', value: 'h4' },
+        { title: 'Quote', value: 'blockquote' },
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [{ title: 'Bullet', value: 'bullet' }],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          // { title: 'Code', value: 'code' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -59,7 +61,30 @@ export default {
     // as a block type.
     {
       type: 'image',
-      options: {hotspot: true},
+      options: { hotspot: true },
+    },
+    {
+      type: 'code',
+      title: 'Code block',
+      // options: {
+      //   theme: 'solarized_dark',
+      //   language: 'js',
+      //   languageAlternatives: [
+      //     { title: 'Javascript', value: 'js' },
+      //     { title: 'HTML', value: 'html' },
+      //     { title: 'CSS', value: 'css' },
+      //     { title: 'SASS', value: 'sass' },
+      //   ],
+      // },
     },
   ],
 }
+
+/*
+{
+  name: 'content',
+  title: 'Content',
+  type: 'array',
+  inputComponent: CustomEditor,
+  of: [{ type: 'block' }, { type: 'code' }],
+},*/
